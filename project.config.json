@@ -2,7 +2,7 @@
   "description": "沈小科学生端 MVP",
   "compileType": "miniprogram",
   "libVersion": "trial",
-  "appid": "touristappid",
+  "appid": "wx8cf03f6b6af8af13",
   "projectname": "shenxiaoke-miniapp",
   "miniprogramRoot": "./",
   "setting": {
@@ -11,7 +11,27 @@
     "enhance": true,
     "postcss": true,
     "minified": true,
-    "urlCheck": false
-  }
+    "urlCheck": false,
+    "compileWorklet": false,
+    "uglifyFileName": false,
+    "uploadWithSourceMap": true,
+    "packNpmManually": false,
+    "packNpmRelationList": [],
+    "minifyWXSS": true,
+    "minifyWXML": true,
+    "localPlugins": false,
+    "disableUseStrict": false,
+    "condition": false,
+    "babelSetting": {
+      "ignore": [],
+      "disablePlugins": [],
+      "outputPath": ""
+    }
+  },
+  "simulatorPluginLibVersion": {},
+  "packOptions": {
+    "ignore": [],
+    "include": []
+  },
+  "editorSetting": {}
 }
-
