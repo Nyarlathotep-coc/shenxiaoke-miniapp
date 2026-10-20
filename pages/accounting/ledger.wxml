@@ -1,2 +1,2 @@
-<view class="page"><view class="page-title">全部账单</view><view class="panel empty">暂无账单</view></view>
+<view class="page"><view class="page-title">全部账单</view><view class="panel empty" wx:if="{{entries.length === 0}}">暂无已确认账单</view><view class="ledger-row" wx:for="{{entries}}" wx:key="id"><view><view class="ledger-title">{{item.description}}</view><view class="ledger-meta">{{item.category}} · {{item.occurredAt}} · {{item.status === 'corrected' ? '已修改' : '已确认'}}</view></view><view class="ledger-side"><text class="ledger-amount {{item.type}}">{{item.type === 'income' ? '+' : '-'}}¥{{item.amount}}</text><view><button data-id="{{item.id}}" bindtap="edit">修改</button><button class="delete" data-id="{{item.id}}" bindtap="remove">删除</button></view></view></view></view>
 
