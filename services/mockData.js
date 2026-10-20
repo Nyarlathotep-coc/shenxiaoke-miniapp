@@ -47,9 +47,61 @@ const agentReplyRules = {
   ]
 }
 
+const courses = [
+  { id: 'course_1', day: '周一', start: '08:20', end: '09:55', name: '高等数学', teacher: '王老师', location: '教学楼 A203', week: '1-16周' },
+  { id: 'course_2', day: '周一', start: '14:00', end: '15:35', name: '大学英语', teacher: '李老师', location: '教学楼 B105', week: '1-16周' },
+  { id: 'course_3', day: '周二', start: '10:10', end: '11:45', name: '程序设计基础', teacher: '赵老师', location: '实验楼 C302', week: '1-16周' },
+  { id: 'course_4', day: '周三', start: '08:20', end: '09:55', name: '线性代数', teacher: '孙老师', location: '教学楼 A101', week: '1-16周' },
+  { id: 'course_5', day: '周四', start: '14:00', end: '15:35', name: '大学物理', teacher: '陈老师', location: '教学楼 B202', week: '1-16周' },
+  { id: 'course_6', day: '周五', start: '10:10', end: '11:45', name: '数据结构', teacher: '周老师', location: '实验楼 C205', week: '1-16周' },
+  { id: 'course_7', day: '周五', start: '15:50', end: '17:25', name: '大学体育', teacher: '刘老师', location: '体育馆', week: '1-16周' }
+]
+
+const calendar = {
+  semester: '2026-2027 学年第一学期',
+  currentWeek: 8,
+  period: '2026年9月7日 - 2027年1月15日',
+  events: [
+    { id: 'calendar_1', date: '11月2日', title: '期中教学检查' },
+    { id: 'calendar_2', date: '12月26日', title: '期末考试周开始' },
+    { id: 'calendar_3', date: '1月16日', title: '寒假开始' }
+  ]
+}
+
+const initialTodos = [
+  { id: 'todo_1', title: '复习高数第三章', done: false, createdAt: '2026-10-20T08:00:00.000Z' },
+  { id: 'todo_2', title: '提交英语作业', done: true, createdAt: '2026-10-19T08:00:00.000Z' }
+]
+
+const studyPlan = {
+  title: '期末复习计划',
+  progress: 35,
+  note: '本周重点：高等数学与数据结构'
+}
+
+const activities = [
+  { id: 'activity_1', category: '讲座', title: '人工智能与未来校园讲座', date: '10月23日 18:30', place: '图书馆报告厅', organizer: '信息与控制学院', description: '邀请行业嘉宾分享生成式人工智能的发展、应用与校园实践。', capacity: 180 },
+  { id: 'activity_2', category: '体育', title: '校园羽毛球新生赛', date: '10月25日 09:00', place: '校体育馆', organizer: '校学生会体育部', description: '面向全体新生的单打友谊赛，现场签到并分组比赛。', capacity: 96 },
+  { id: 'activity_3', category: '社团', title: '秋日摄影采风活动', date: '10月26日 14:00', place: '校园南门集合', organizer: '摄影协会', description: '用镜头记录秋日校园，活动结束后将评选优秀作品。', capacity: 40 },
+  { id: 'activity_4', category: '讲座', title: '图书馆读书分享会', date: '10月28日 19:00', place: '图书馆 301', organizer: '校图书馆', description: '本期主题为科技与人文，欢迎携带喜欢的书籍参与交流。', capacity: 60 }
+]
+
+const mealRecommendations = [
+  { name: '番茄牛腩饭', place: '二食堂一楼', price: '约 15 元', reason: '暖胃、荤素搭配' },
+  { name: '鸡丝凉面', place: '一食堂二楼', price: '约 11 元', reason: '清爽、出餐快' },
+  { name: '麻辣香锅', place: '风味餐厅', price: '约 18 元', reason: '自由选菜、口味丰富' },
+  { name: '菌菇鸡汤面', place: '二食堂二楼', price: '约 13 元', reason: '清淡、适合晚餐' }
+]
+
 module.exports = {
   user,
   agentConfigs,
-  agentReplyRules
+  agentReplyRules,
+  courses,
+  calendar,
+  initialTodos,
+  studyPlan,
+  activities,
+  mealRecommendations
 }
 

@@ -1,9 +1,27 @@
 <view class="page">
   <view class="page-title">学习中心</view><view class="page-subtitle">课表、计划与学习助手</view>
   <view class="assistant-strip" bindtap="goChat"><view><view class="strip-title">学习助手</view><view class="strip-desc">查询课表、解答问题、制定计划</view></view><text class="strip-arrow">›</text></view>
-  <view class="section"><view class="section-heading"><text class="section-title">课程安排</text><view class="segment"><text class="{{scheduleMode === 'today' ? 'active' : ''}}" data-mode="today" bindtap="setScheduleMode">今日</text><text class="{{scheduleMode === 'week' ? 'active' : ''}}" data-mode="week" bindtap="setScheduleMode">本周</text></view></view><view class="panel empty">课表数据将在学习功能阶段接入</view></view>
-  <view class="quick-grid"><view class="quick-item"><text class="quick-title">校历与时间表</text><text>查看教学周安排</text></view><view class="quick-item"><text class="quick-title">学习资料</text><text>资料分类入口</text></view></view>
-  <view class="section"><view class="section-heading"><text class="section-title">学习计划与待办</text><text class="section-link">新增</text></view><view class="panel empty">还没有学习任务</view></view>
-  <view class="section"><view class="section-heading"><text class="section-title">助手会话</text><text class="section-link" bindtap="goSessions">全部会话</text></view><view class="panel empty" bindtap="goChat">开始一次学习对话</view></view>
+  <view class="section">
+    <view class="section-heading"><text class="section-title">课程安排</text><view class="segment"><text class="{{scheduleMode === 'today' ? 'active' : ''}}" data-mode="today" bindtap="setScheduleMode">今日</text><text class="{{scheduleMode === 'week' ? 'active' : ''}}" data-mode="week" bindtap="setScheduleMode">本周</text></view></view>
+    <view wx:if="{{scheduleMode === 'today'}}">
+      <view class="panel empty" wx:if="{{todayCourses.length === 0}}">今天没有课程</view>
+      <view class="course-row" wx:for="{{todayCourses}}" wx:key="id"><view class="course-time"><text>{{item.start}}</text><text>{{item.end}}</text></view><view class="course-detail"><view>{{item.name}}</view><text>{{item.location}} · {{item.teacher}}</text></view></view>
+    </view>
+    <scroll-view wx:else class="week-scroll" scroll-x enable-flex>
+      <view class="day-column" wx:for="{{weekSchedule}}" wx:key="day" wx:for-item="dayItem"><view class="day-name">{{dayItem.day}}</view><view class="mini-course" wx:for="{{dayItem.courses}}" wx:key="id" wx:for-item="course"><text>{{course.start}}</text><view>{{course.name}}</view><text>{{course.location}}</text></view><view class="day-empty" wx:if="{{dayItem.courses.length === 0}}">无课</view></view>
+    </scroll-view>
+  </view>
+
+  <view class="section calendar-band" wx:if="{{calendar}}"><view><view class="section-title">校历与时间表</view><view class="calendar-term">{{calendar.semester}} · 第 {{calendar.currentWeek}} 周</view><view class="calendar-period">{{calendar.period}}</view></view><view class="calendar-events"><view wx:for="{{calendar.events}}" wx:key="id"><text>{{item.date}}</text>{{item.title}}</view></view></view>
+
+  <view class="quick-grid"><view class="quick-item"><text class="quick-title">学习计划</text><text>{{studyPlan.note}}</text><view class="progress"><view style="width: {{studyPlan.progress}}%;"></view></view></view><view class="quick-item"><text class="quick-title">学习资料</text><text>课程讲义与复习资料入口</text></view></view>
+
+  <view class="section">
+    <view class="section-heading"><text class="section-title">Todolist</text><text class="todo-count">{{todos.length}} 项</text></view>
+    <view class="todo-creator"><input value="{{todoInput}}" placeholder="新增学习任务" confirm-type="done" bindinput="onTodoInput" bindconfirm="addTodo"/><button bindtap="addTodo">添加</button></view>
+    <view class="panel empty" wx:if="{{todos.length === 0}}">还没有学习任务</view>
+    <view class="todo-list" wx:else><view class="todo-row" wx:for="{{todos}}" wx:key="id"><view class="todo-main {{item.done ? 'completed' : ''}}" data-id="{{item.id}}" bindtap="toggleTodo"><text class="todo-check">{{item.done ? '✓' : ''}}</text><text>{{item.title}}</text></view><button data-id="{{item.id}}" catchtap="deleteTodo">删除</button></view></view>
+  </view>
+  <view class="section"><view class="section-heading"><text class="section-title">学习助手会话</text><text class="section-link" bindtap="goSessions">全部会话</text></view><button class="secondary-button full-button" bindtap="goChat">开始新的学习对话</button></view>
 </view>
 

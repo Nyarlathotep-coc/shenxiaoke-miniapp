@@ -10,7 +10,8 @@
     <view class="service-item"><text class="service-name">二手市场</text><text>功能入口占位</text></view>
     <view class="service-item"><text class="service-name">复习资料</text><text>功能入口占位</text></view>
   </view>
-  <view class="section"><view class="section-heading"><text class="section-title">近期活动</text><text class="section-link">查看全部</text></view><view class="panel empty">校园活动将在生活功能阶段接入</view></view>
+  <view class="section"><view class="section-heading"><text class="section-title">校园活动</text><text class="section-link">{{activities.length}} 项活动</text></view><view class="category-tabs"><text wx:for="{{categories}}" wx:key="*this" class="{{category === item ? 'active' : ''}}" data-category="{{item}}" bindtap="selectCategory">{{item}}</text></view><view class="search-box"><input value="{{keyword}}" placeholder="搜索活动名称、地点或主办方" bindinput="onSearch"/><text>⌕</text></view><view class="panel empty" wx:if="{{activities.length === 0}}">没有匹配的活动</view><view class="activity-card" wx:for="{{activities}}" wx:key="id" data-id="{{item.id}}" bindtap="openActivity"><view class="activity-tag">{{item.category}}</view><view class="activity-title">{{item.title}}</view><view class="activity-meta">{{item.date}} · {{item.place}}</view><view class="activity-org">{{item.organizer}}</view></view></view>
+  <view class="section" wx:if="{{meal}}"><view class="section-heading"><text class="section-title">今天吃什么</text><text class="section-link" bindtap="recommendMeal">换一个</text></view><view class="meal-card"><view><view class="meal-name">{{meal.name}}</view><view class="meal-meta">{{meal.place}} · {{meal.price}}</view><view class="meal-reason">{{meal.reason}}</view></view><text class="meal-mark">荐</text></view></view>
   <view class="section"><view class="section-heading"><text class="section-title">助手会话</text><text class="section-link" bindtap="goSessions">全部会话</text></view><view class="panel empty" bindtap="goChat">开始一次生活对话</view></view>
 </view>
 
