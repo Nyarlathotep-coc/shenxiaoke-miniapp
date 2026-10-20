@@ -1,0 +1,3 @@
+.assistant-strip { display:flex; align-items:center; justify-content:space-between; margin-top:28rpx; padding:28rpx; border-radius:12rpx; background:#e8f7f3; color:#087966; }.strip-title { font-size:32rpx; font-weight:700; }.strip-desc { margin-top:8rpx; font-size:24rpx; }.strip-arrow { font-size:48rpx; }
+.service-grid { display:grid; grid-template-columns:1fr 1fr; gap:16rpx; margin-top:28rpx; }.service-item { display:flex; flex-direction:column; min-height:100rpx; padding:24rpx; border-bottom:1rpx solid #dde4e9; background:#fff; color:#7b8794; font-size:23rpx; }.service-name { margin-bottom:10rpx; color:#273442; font-size:28rpx; font-weight:650; }
+

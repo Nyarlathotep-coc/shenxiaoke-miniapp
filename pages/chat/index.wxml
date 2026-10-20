@@ -1,0 +1,2 @@
+<view class="chat-shell"><view class="chat-empty"><view class="agent-mark {{agent}}">{{agentMark}}</view><view class="chat-title">{{title}}</view><view class="chat-note">会话功能将在下一阶段接入</view></view><view class="composer"><input placeholder="输入消息" disabled/><button disabled>发送</button></view></view>
+

@@ -1,0 +1,2 @@
+.new-button { display:flex; align-items:center; height:66rpx; margin:0; padding:0 24rpx; border-radius:8rpx; background:#1268e3; color:#fff; font-size:25rpx; }
+

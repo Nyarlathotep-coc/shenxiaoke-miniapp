@@ -1,5 +1,57 @@
 <view class="page">
-  <view class="welcome">沈小科</view>
-  <view class="subtitle">学生端 MVP 正在建设中</view>
+  <view class="hero">
+    <view class="hero-brand">沈小科</view>
+    <view class="hero-greeting">你好，{{userName}}</view>
+    <view class="hero-note">今天也要从容安排校园生活</view>
+  </view>
+
+  <view class="agent-grid">
+    <button class="agent-entry study" data-agent="study" bindtap="goAgent">
+      <text class="agent-name">学习助手</text>
+      <text class="agent-desc">查询课表、解答问题、制定计划</text>
+    </button>
+    <button class="agent-entry life" data-agent="life" bindtap="goAgent">
+      <text class="agent-name">生活助手</text>
+      <text class="agent-desc">请假、活动、校园生活咨询</text>
+    </button>
+    <button class="agent-entry accounting" bindtap="goAccounting">
+      <text class="agent-name">AI 记账</text>
+      <text class="agent-desc">输入一句话，自动生成账单</text>
+    </button>
+  </view>
+
+  <view class="section">
+    <view class="section-heading"><text class="section-title">今日课程</text><text class="section-link">查看课表</text></view>
+    <view class="timeline panel">
+      <view class="timeline-item" wx:for="{{courses}}" wx:key="time">
+        <text class="timeline-time">{{item.time}}</text>
+        <view><view class="item-title">{{item.name}}</view><view class="item-meta">{{item.location}}</view></view>
+      </view>
+    </view>
+  </view>
+
+  <view class="section split-section">
+    <view class="summary-block">
+      <view class="section-title">今日待办</view>
+      <view class="compact-list">
+        <view class="compact-item" wx:for="{{todos}}" wx:key="title">
+          <text class="dot {{item.done ? 'done' : ''}}"></text><text class="{{item.done ? 'done-text' : ''}}">{{item.title}}</text>
+        </view>
+      </view>
+    </view>
+    <view class="summary-block spending" bindtap="goAccounting">
+      <view class="section-title">本月支出</view>
+      <view class="money">¥{{summary.expense}}</view>
+      <view class="item-meta">结余 ¥{{summary.balance}}</view>
+    </view>
+  </view>
+
+  <view class="section">
+    <view class="section-heading"><text class="section-title">最近校园活动</text><text class="section-link">更多活动</text></view>
+    <view class="activity-row panel">
+      <view class="activity-date">10<text>月</text></view>
+      <view><view class="item-title">{{activity.title}}</view><view class="item-meta">{{activity.time}} · {{activity.place}}</view></view>
+    </view>
+  </view>
 </view>
 

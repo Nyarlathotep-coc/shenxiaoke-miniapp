@@ -1,0 +1,3 @@
+.profile { display:flex; align-items:center; padding:34rpx 12rpx 46rpx; }.avatar { display:flex; align-items:center; justify-content:center; width:104rpx; height:104rpx; margin-right:24rpx; border-radius:50%; background:#1268e3; color:#fff; font-size:42rpx; font-weight:700; }.profile-name { font-size:36rpx; font-weight:700; }.profile-id { margin-top:10rpx; color:#7b8794; font-size:24rpx; }
+.menu-section { margin-bottom:24rpx; padding:0 26rpx; border:1rpx solid #e4e9ee; border-radius:12rpx; background:#fff; }.menu-row { display:flex; align-items:center; justify-content:space-between; min-height:94rpx; border-bottom:1rpx solid #edf0f2; }.menu-row:last-child { border-bottom:0; }.menu-row text:last-child { color:#a2acb6; font-size:38rpx; }
+

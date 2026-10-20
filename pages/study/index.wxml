@@ -1,0 +1,9 @@
+<view class="page">
+  <view class="page-title">学习中心</view><view class="page-subtitle">课表、计划与学习助手</view>
+  <view class="assistant-strip" bindtap="goChat"><view><view class="strip-title">学习助手</view><view class="strip-desc">查询课表、解答问题、制定计划</view></view><text class="strip-arrow">›</text></view>
+  <view class="section"><view class="section-heading"><text class="section-title">课程安排</text><view class="segment"><text class="{{scheduleMode === 'today' ? 'active' : ''}}" data-mode="today" bindtap="setScheduleMode">今日</text><text class="{{scheduleMode === 'week' ? 'active' : ''}}" data-mode="week" bindtap="setScheduleMode">本周</text></view></view><view class="panel empty">课表数据将在学习功能阶段接入</view></view>
+  <view class="quick-grid"><view class="quick-item"><text class="quick-title">校历与时间表</text><text>查看教学周安排</text></view><view class="quick-item"><text class="quick-title">学习资料</text><text>资料分类入口</text></view></view>
+  <view class="section"><view class="section-heading"><text class="section-title">学习计划与待办</text><text class="section-link">新增</text></view><view class="panel empty">还没有学习任务</view></view>
+  <view class="section"><view class="section-heading"><text class="section-title">助手会话</text><text class="section-link" bindtap="goSessions">全部会话</text></view><view class="panel empty" bindtap="goChat">开始一次学习对话</view></view>
+</view>
+

@@ -1,0 +1,16 @@
+<view class="page">
+  <view class="page-title">校园生活</view><view class="page-subtitle">校内服务与生活助手</view>
+  <view class="assistant-strip" bindtap="goChat"><view><view class="strip-title">生活助手</view><view class="strip-desc">请假、活动、校园生活咨询</view></view><text class="strip-arrow">›</text></view>
+  <view class="service-grid">
+    <view class="service-item" bindtap="goLeave"><text class="service-name">请假申请</text><text>生成规范文本</text></view>
+    <view class="service-item"><text class="service-name">校园活动</text><text>发现近期活动</text></view>
+    <view class="service-item"><text class="service-name">今天吃什么</text><text>随机推荐餐食</text></view>
+    <view class="service-item" bindtap="goAccounting"><text class="service-name">AI 记账</text><text>一句话记账</text></view>
+    <view class="service-item"><text class="service-name">校园服务</text><text>常用服务入口</text></view>
+    <view class="service-item"><text class="service-name">二手市场</text><text>功能入口占位</text></view>
+    <view class="service-item"><text class="service-name">复习资料</text><text>功能入口占位</text></view>
+  </view>
+  <view class="section"><view class="section-heading"><text class="section-title">近期活动</text><text class="section-link">查看全部</text></view><view class="panel empty">校园活动将在生活功能阶段接入</view></view>
+  <view class="section"><view class="section-heading"><text class="section-title">助手会话</text><text class="section-link" bindtap="goSessions">全部会话</text></view><view class="panel empty" bindtap="goChat">开始一次生活对话</view></view>
+</view>
+

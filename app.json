@@ -1,6 +1,16 @@
 {
   "pages": [
-    "pages/home/index"
+    "pages/home/index",
+    "pages/study/index",
+    "pages/life/index",
+    "pages/mine/index",
+    "pages/chat/index",
+    "pages/sessions/index",
+    "pages/accounting/index",
+    "pages/accounting/ledger",
+    "pages/accounting/stats",
+    "pages/activity-detail/index",
+    "pages/leave/index"
   ],
   "window": {
     "navigationBarTitleText": "沈小科",
@@ -8,6 +18,30 @@
     "navigationBarTextStyle": "black",
     "backgroundColor": "#f5f7f9",
     "backgroundTextStyle": "dark"
+  },
+  "tabBar": {
+    "color": "#6b7785",
+    "selectedColor": "#1268e3",
+    "backgroundColor": "#ffffff",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/home/index",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/study/index",
+        "text": "学习"
+      },
+      {
+        "pagePath": "pages/life/index",
+        "text": "生活"
+      },
+      {
+        "pagePath": "pages/mine/index",
+        "text": "我的"
+      }
+    ]
   },
   "style": "v2",
   "sitemapLocation": "sitemap.json"

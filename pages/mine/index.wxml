@@ -1,0 +1,15 @@
+<view class="page">
+  <view class="profile"><view class="avatar">科</view><view><view class="profile-name">小科同学</view><view class="profile-id">学号 20260001</view></view></view>
+  <view class="menu-section">
+    <view class="menu-row"><text>我的收藏</text><text>›</text></view>
+    <view class="menu-row"><text>我的待办</text><text>›</text></view>
+    <view class="menu-row"><text>我的请假记录</text><text>›</text></view>
+    <view class="menu-row" bindtap="goAccounting"><text>我的账单</text><text>›</text></view>
+  </view>
+  <view class="menu-section">
+    <view class="menu-row" bindtap="goSessions"><text>Agent 会话管理</text><text>›</text></view>
+    <view class="menu-row"><text>设置</text><text>›</text></view>
+    <view class="menu-row"><text>意见反馈</text><text>›</text></view>
+  </view>
+</view>
+
