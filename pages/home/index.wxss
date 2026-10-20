@@ -70,4 +70,4 @@
 .activity-row { display: flex; align-items: center; }
 .activity-date { margin-right: 26rpx; color: #1268e3; font-size: 46rpx; font-weight: 700; }
 .activity-date text { margin-left: 4rpx; font-size: 22rpx; font-weight: 500; }
-}
+
