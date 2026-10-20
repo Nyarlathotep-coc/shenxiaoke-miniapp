@@ -1,2 +1,25 @@
-<view class="chat-shell"><view class="chat-empty"><view class="agent-mark {{agent}}">{{agentMark}}</view><view class="chat-title">{{title}}</view><view class="chat-note">会话功能将在下一阶段接入</view></view><view class="composer"><input placeholder="输入消息" disabled/><button disabled>发送</button></view></view>
+<view class="chat-shell">
+  <view class="chat-toolbar">
+    <button bindtap="openSessions">历史会话</button>
+    <button bindtap="newSession">新建会话</button>
+  </view>
+  <view class="loading" wx:if="{{loading}}">正在加载会话…</view>
+  <scroll-view wx:else class="message-list" scroll-y scroll-with-animation scroll-into-view="{{scrollTarget}}">
+    <view class="chat-empty" wx:if="{{messages.length === 0}}">
+      <view class="agent-mark {{agent}}">{{agentMark}}</view>
+      <view class="chat-title">{{title}}</view>
+      <view class="chat-note">选择一个常见问题，或直接输入消息</view>
+      <view class="suggestions">
+        <button wx:for="{{suggestions}}" wx:key="*this" data-text="{{item}}" bindtap="useSuggestion">{{item}}</button>
+      </view>
+    </view>
+    <view class="message {{item.role}}" id="message-{{item.id}}" wx:for="{{messages}}" wx:key="id">
+      <view class="bubble">{{item.content}}</view>
+    </view>
+  </scroll-view>
+  <view class="composer">
+    <input value="{{inputValue}}" placeholder="输入消息" confirm-type="send" bindinput="onInput" bindconfirm="send"/>
+    <button class="{{inputValue && !sending ? 'ready' : ''}}" disabled="{{!inputValue || sending}}" bindtap="send">{{sending ? '发送中' : '发送'}}</button>
+  </view>
+</view>
 
